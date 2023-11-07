@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja" >
+<head>
+  <meta charset="UTF-8">
+  <title>輸血Check</title>
+{% load static %}
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdn.datatables.net/buttons/1.2.2/css/buttons.bootstrap.min.css'>
+<link rel="stylesheet" href="{% static 'DataTables/datatables.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'DataTables/datatables.min.css' %}"/>
+<link rel="stylesheet" href="{% static 'DataTables/Bulma-0.9.2/css/bulma.css' %}">
+<link rel="stylesheet" href="{% static 'css/depbase.css' %}">
+
+<script  src="{% static 'js/jquery-3.6.3.min.js' %}"></script>
+<script  type="text/javascript" src="{% static 'DataTables/datatables.min.js' %}"></script>
+<script  type="text/javascript" src="{% static 'DataTables/Buttons-2.3.4/js/dataTables.buttons.min.js' %}"></script>
+<script  type="text/javascript" src="{% static 'DataTables/Buttons-2.3.4/js/buttons.colVis.min.js' %}"></script>
+<script  type="text/javascript" src="{% static 'DataTables/Buttons-2.3.4/js/buttons.html5.min.js' %}"></script>
+<script  type="text/javascript" src="{% static 'DataTables/Buttons-2.3.4/js/buttons.print.min.js' %}"></script>
+<script  type="text/javascript" src="{% static 'DataTables/Buttons-2.3.4/js/buttons.bootstrap.min.js' %}"></script>
+<script src='https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js'></script>
+<script src='https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js'></script>
+<script  src="{% static 'js/depbase.js' %}"></script>
+</head>
+	<body>
+	<!-- partial:index.partial.html -->
+		<div id="wrap">
+			<h1>輸血 <span>check!</span> リスト</h1>
+			<div class="kirokubtn">
+				<input type="button" value="記録用印刷ボタン" onclick="window.print();" >
+			</div>
+
+					<div class="tableBlock.pattern04">
+						<table id="POST" class="table is-striped" width="100%">
+							<caption>レスポンシブテーブル</caption>
+							<thead>
+								<tr>
+									<th>記録日時</th>
+									<th>記録者</th>
+									<th>冷蔵庫1</th>
+									<th>冷蔵庫2</th>
+									<th>冷蔵庫3</th>
+									<th>冷蔵庫4</th>
+									<th>振盪機</th>
+									<th>冷凍庫1</th>
+									<th>冷凍庫2</th>
+									<th>（目視）冷蔵庫1</th>
+									<th>（目視）冷蔵庫2</th>
+									<th>（目視）冷蔵庫3</th>
+									<th>（目視）冷蔵庫4</th>
+									<th>（目視）振盪機</th>
+									<th>（目視）冷凍庫1</th>
+									<th>（目視）冷凍庫2</th>
+									<th>輸血冷蔵庫カギ</th>
+									<th>編集/削除</th>
+
+								</tr>
+							</thead>
+
+							<tbody>
+								{% for post in posts %}
+								<tr>
+									<td>{{ post.created_at }}</td>
+									<td>{{ post.recorder }}</td>
+									<td>{{ post.yuketu_fridge1 }}℃</td>
+									<td>{{ post.yuketu_fridge2 }}℃</td>
+									<td>{{ post.yuketu_fridge3 }}℃</td>
+									<td>{{ post.yuketu_fridge4 }}℃</td>
+									<td>{{ post.yuketu_shake1 }}℃</td>
+									<td>{{ post.yuketu_freezer1 }}℃</td>
+									<td>{{ post.yuketu_freezer2 }}℃</td>
+									<td>{{ post.yuketu_visual_fridge1 }}℃</td>
+									<td>{{ post.yuketu_visual_fridge2 }}℃</td>
+									<td>{{ post.yuketu_visual_fridge3 }}℃</td>
+									<td>{{ post.yuketu_visual_fridge4 }}℃</td>
+									<td>{{ post.yuketu_visual_shake1 }}℃</td>
+									<td>{{ post.yuketu_visual_freezer1 }}℃</td>
+									<td>{{ post.yuketu_visual_freezer2 }}℃</td>
+									<td>{{ post.yuketu_lockcheck }}℃</td>
+									<td>
+										<button type="button" class="btn btn-primary btn-xs dt-edit" style="margin-right:16px;">
+											<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+										</button>
+										<button type="button" class="btn btn-danger btn-xs dt-delete"><a href="{% url 'laborec:jikangaiDelete' pk=jikangaiList.pk %}"></a>
+											<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+										</button>
+									</td>
+								</tr>
+								{% endfor %}
+
+							</tbody>
+						</table>
+					</div>
+		</div>
+		
+	</body>
+</html>

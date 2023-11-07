@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja" >
+<head>
+  <meta charset="UTF-8">
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'css/create.css' %}">
+  <title>時間外チェックリスト</title>
+</head>
+<body>
+			<div class="segment"><h1>新規登録</h1></div>
+				<form method="POST">
+					{% csrf_token %}
+					{{ form.as_p }}
+					<label type="checkbox" for="seika_samplecheck" >冷蔵庫検体チェック</label>
+					<input class="hovcheck" type="checkbox" name="seika_samplecheck">
+					<button class="red" type="submit"><i class="icon ion-md-lock"></i> 新規登録</button>
+				</form>
+		</div>
+	</div>
+</body>
+</html>

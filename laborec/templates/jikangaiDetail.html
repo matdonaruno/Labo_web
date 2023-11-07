@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {% load static %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="{% static 'css/netflix-detail.css' %}">
+  <title>時間外チェックリスト</title>
+
+  <body>
+    <section class="container margin-inline">
+      <h1>記録詳細</h1>
+
+      <h1 class="title margin-top">記録者　{{ jikangaiDetail.recorder }}</h1>
+      <h1 class="title margin-top">記録日　{{ jikangaiDetail.created_at }}</h1>
+      <hr />
+
+      <!-- Table -->
+
+      <div class="table-res margin-top-1">
+        <!-- Text-Absolute -->
+        <div class="text-absolute">
+        </div>
+
+        <div class="tab-hidden hide">
+          <input class="tab-input-none" type="radio" name="radiotab" id="tab-1" />
+
+          <div class="label">
+            <label class="tab-label text-table-head" for="tab-1">スペース用</label>
+          </div>
+
+          <div class="content-list hide">
+            <p class="text-content-1">冷蔵庫1</p>
+            <p class="text-content-1">冷蔵庫2</p>
+            <p class="text-content-1">冷蔵庫3</p>
+            <p class="text-content-1">冷蔵庫4</p>
+            <p class="text-content-1">冷蔵庫5</p>
+            <p class="text-content-1">冷蔵庫6</p>
+            <p class="text-content-1">冷蔵庫7</p>
+            <p class="text-content-1">冷凍庫1</p>
+            <p class="text-content-1">検体チェック</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="label">
+            <label class="tab-label text-table-head" for="tab-2">recorde</label>
+          </div>
+
+          <div class="content-list">
+            <p class="text-content">{{ jikangaiDetail.seika_fridge1 }}℃</p>
+            <p class="text-content">{{ jikangaiDetail.seika_fridge2 }}℃</p>
+            <p class="text-content">{{ jikangaiDetail.seika_fridge3 }}℃</p>
+            <p class="text-content">{{ jikangaiDetail.seika_fridge4 }}℃</p>
+            <p class="text-content">{{ jikangaiDetail.seika_fridge5 }}℃</p>
+            <p class="text-content">{{ jikangaiDetail.seika_fridge6 }}℃</p>
+            <p class="text-content">{{ jikangaiDetail.seika_fridge7 }}℃</p>
+            <p class="text-content">{{ jikangaiDetail.seika_freezer1 }}℃</p>
+            <p class="text-content">{{ jikangaiDetail.seika_samplecheck }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+
+      <div class="line">
+        <hr />
+        <hr />
+        <hr />
+        <hr />
+        <hr />
+        <hr />
+        <hr />
+        <hr />
+      </div>
+    </section>
+  </body>
+
+  </html>

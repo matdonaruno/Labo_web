@@ -1,0 +1,74 @@
+#wrap {
+  margin:2em auto;
+  font-family: Arial, Roboto, “Droid Sans”, “游ゴシック”, YuGothic, “ヒラギノ角ゴ ProN W3”, “Hiragino Kaku Gothic ProN”, “メイリオ”, Meiryo, sans-serif;
+  max-width:960px;
+}
+h1, h2 {
+  text-align:center;
+  font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+}
+h1 {
+  font-size: 2.5em;
+}
+h1 span {
+  color:#ffc045;
+}
+.kirokubtn {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.tableBlock {
+  margin:2em;}
+table{
+  width:100%;
+  table-layout:fixed;
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+  border:1px solid #cfcfcf;
+}
+table caption {
+  color: #0a0a0a;
+  padding:1em;
+  line-height: 0.8;
+  text-align: left;
+  background:#c65eb9;
+  opacity: 80%;
+}
+table tr th {
+  background:#f2f2f2;
+}
+table tr th,
+table tr td {
+  padding:1em;
+  line-height: 1.5;
+  text-align:left;
+  border:1px solid #cfcfcf;
+}
+
+
+/* パターン4：テーブルを横スクロールに */
+.tableBlock.pattern04 {
+  overflow-x:auto;
+}
+.tableBlock.pattern04 table {
+  width:960px;
+}
+/* スクロールバー全体 */
+.tableBlock.pattern04::-webkit-scrollbar{
+    height: 2em;
+    background-color: #F1F1F1;
+}
+/* スクロールバーのつまみ(可動部分) */
+.tableBlock.pattern04::-webkit-scrollbar-thumb{
+    background-color: #BCBCBC;
+    border-radius: 12px;
+    border-radius: 1.2rem;
+}
+.tableBlock.pattern04::-webkit-scrollbar-thumb:hover{
+    background-color: #A9A9AA;
+}
+td:last-child {text-align:center;}
+button {
+  text-align: right;
+}

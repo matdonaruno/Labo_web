@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/simple-css-waves.css' %}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="{% static 'css/res-navibar.css' %}">
+
+</head>
+<header>
+  <nav>
+    <div>
+      <ul id="nav">
+        <li><a href="{% url 'laborec:jikangaiList' %}">時間外</a></li>
+        <li><a href="#">細菌</a></li>
+        <li><a href="#">生化学</a></li>
+        <li><a href="#">血液</a></li>
+        <li><a href="#">輸血</a></li>
+        <li><a href="#">病理</a></li>
+        <li><a href="#">試薬管理</a></li>
+      </ul>
+    </div>
+    <div class="menu" id="menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+</header>
+<body>
+  <div class="header">
+    <div class="d-grid gap-2 d-md-block">
+    </div>
+    <!--Content before waves-->
+    <div class="inner-header flex">
+    <!--Just the logo.. Don't mind this-->
+    <center><big>Labo Support App</big></center>
+    </div>
+
+
+    <!--Waves Container-->
+    <div>
+    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+    <defs>
+    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+    </defs>
+    <g class="parallax">
+    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+    </g>
+    </svg>
+    </div>
+    <!--Waves end-->
+
+    </div>
+    <!--Header ends-->
+
+    <!--Content starts-->
+    <div class="content flex">
+      <p>By.Goodkatz | from NHO都城医療センター</p>
+    </div>
+    <!--Content ends-->
+    <script src="{% static 'js/res-navibar.js' %}"></script>
+  </body>
+</html>

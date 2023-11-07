@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja" >
+<head>
+  <meta charset="UTF-8">
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'css/create.css' %}">
+  <title>時間外チェックリスト</title>
+</head>
+<body>
+			<div class="segment"><h1>新規登録</h1></div>
+				<form method="POST" class="form-signin">
+					{% csrf_token %}
+					{{ form.non_field_errors }}
+						<label for="recorder">記録者</label>
+						<input class="form-styling" type="text" name="recorder" value="{{ form.username }}">
+					
+						<label for="name">冷蔵庫1</label>
+						<input class="form-styling" type="number" name="seika_fridge1" value="5" data-format="℃">
+					
+						<label for="name">冷蔵庫2</label>
+						<input class="form-styling" type="number" name="seika_fridge2" value="5">
+					
+						<label for="name">冷蔵庫3</label>
+						<input class="form-styling" type="number" name="seika_fridge3" value="5">
+					
+						<label for="name">冷蔵庫4</label>
+						<input class="form-styling" type="number" name="seika_fridge4" value="5">
+					
+						<label for="name">冷蔵庫5</label>
+						<input class="form-styling" type="number" name="seika_fridge5" value="5">
+					
+						<label for="name">冷蔵庫6</label>
+						<input class="form-styling" type="number" name="seika_fridge6" value="5">
+					
+						<label for="name">冷蔵庫7</label>
+						<input class="form-styling" type="number" name="seika_fridge7" value="5">
+					
+						<label for="name">冷凍庫1</label>
+						<input class="form-styling" type="number" name="seika_freezer1" value="-30">
+					
+						<label for="name">冷蔵庫検体チェック</label>
+						<input type="checkbox" name="seika_samplecheck">
+          
+					<bottun type="submit" class='red' value="新規登録">
+				</form>
+		</div>
+	</div>
+</body>
+</html>
